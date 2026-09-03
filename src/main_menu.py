@@ -1,5 +1,6 @@
-from src.character_creation_menu import CharacterCreationMenu
-from src.character_view_menu import CharacterViewMenu
+from src.fighter_creation_menu import FighterCreationMenu
+from src.fighter_view_menu import FighterViewMenu
+from src.battle_service import BattleService
 
 class MainMenu:
     def __init__(self):
@@ -13,14 +14,18 @@ class MainMenu:
             return
 
         if self.user_inp == 1:
-            charactercreationmenu = CharacterCreationMenu()
-            charactercreationmenu.Open()
+            fightercreationmenu = FighterCreationMenu()
+            fightercreationmenu.Open()
         elif self.user_inp == 2:
-            pass
+            fighterviewmenu = FighterViewMenu()
+            fighterviewmenu.Open()
         elif self.user_inp == 3:
-            pass
+            battleservice = BattleService()
+            battleservice.Open()
         elif self.user_inp == 4:
             return
+
+        self.Open()
 
     # === API ===
 
